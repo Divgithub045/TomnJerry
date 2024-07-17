@@ -1,5 +1,7 @@
 var scorecnt =0;
 cross=true;
+audioJump= new Audio('mixkit-arcade-game-jump-coin-216.wav');
+audiogo= new Audio('E49EQNV-sorry-you-lost.mp3');
 document.onkeydown = function(e) 
 {
     console.log(e.keyCode);
@@ -8,6 +10,7 @@ document.onkeydown = function(e)
             dino=document.querySelector(".jerry");
             dino.classList.add("animateDino");
             setTimeout(()=>dino.classList.remove("animateDino"),700);
+            audioJump.play();
 
 
         }
@@ -43,6 +46,7 @@ setInterval(()=>{
             {
                 gameOver.style.visibility="visible";
                 tom.classList.remove("animateTom");
+                audiogo.play();
            
             }
     else if (dX<70&&cross)
